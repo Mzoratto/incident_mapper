@@ -33,6 +33,9 @@ jobs:
       - name: Install
         run: pnpm -v && pnpm -w install
 
+      - name: Ensure web deps are linked
+        run: pnpm --filter @incident/web install
+
       - name: Build static export
         env:
           GITHUB_PAGES: true
