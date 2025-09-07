@@ -19,7 +19,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
+          # No pnpm cache here to avoid requiring pnpm before installation
 
       - name: Enable corepack
         run: corepack enable
@@ -28,6 +28,7 @@ jobs:
         uses: pnpm/action-setup@v3
         with:
           version: 9
+          run_install: false
 
       - name: Install
         run: pnpm -v && pnpm -w install
