@@ -21,13 +21,16 @@ jobs:
           node-version: 20
           cache: 'pnpm'
 
+      - name: Enable corepack
+        run: corepack enable
+
       - name: Setup pnpm
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v3
         with:
           version: 9
 
       - name: Install
-        run: pnpm -w install
+        run: pnpm -v && pnpm -w install
 
       - name: Build static export
         env:
@@ -46,4 +49,3 @@ jobs:
           publish_branch: gh-pages
           publish_dir: apps/web/out
           force_orphan: true
-
