@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9
+
+      - name: Install deps
+        run: pnpm -w install
+
+      - name: Generate Prisma Client
+        run: pnpm --filter @incident/api prisma:generate
+
+      - name: Lint
+        run: pnpm -r lint --if-present
+
+      - name: Typecheck Web
+        run: pnpm --filter @incident/web typecheck
+
+      - name: Build API
+        run: pnpm --filter @incident/api build
+
+      - name: Build Web
+        run: pnpm --filter @incident/web build
+
+      - name: Smoke Test (optional)
+        run: node scripts/smoke.mjs
+        continue-on-error: true

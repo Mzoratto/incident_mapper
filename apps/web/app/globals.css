@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body { height: 100%; }
+body { background: #f6f7fb; color: #0f172a; }
+
+/* App theming */
+.app-container { @apply max-w-6xl mx-auto px-4 md:px-6; }
+.card { @apply border rounded-lg bg-white shadow-sm; }
+.card-hover { @apply transition-shadow duration-200 hover:shadow-md; }
+.section-title { @apply text-lg font-semibold tracking-tight; }
+.muted { @apply text-slate-600; }
+
+.header-gradient {
+  background: radial-gradient(1000px 400px at 10% -10%, #e0f2fe 0%, rgba(224,242,254,0) 60%),
+              radial-gradient(900px 500px at 90% -20%, #fce7f3 0%, rgba(252,231,243,0) 60%);
+}
+
+/* Dark theme */
+.dark body { background: #0b1220; color: #e2e8f0; }
+.dark .card { background: #0f172a; border-color: #1f2937; }
+.dark .header-gradient {
+  background: radial-gradient(1000px 400px at 10% -10%, #0b3b5f 0%, rgba(11,59,95,0) 60%),
+              radial-gradient(900px 500px at 90% -20%, #4b2147 0%, rgba(75,33,71,0) 60%);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

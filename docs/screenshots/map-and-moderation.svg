@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <rect width="1200" height="700" fill="#f6f7fb"/>
+  <rect x="40" y="40" width="700" height="620" rx="16" fill="#ffffff" stroke="#e5e7eb"/>
+  <rect x="780" y="40" width="380" height="620" rx="16" fill="#ffffff" stroke="#e5e7eb"/>
+  <text x="390" y="360" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto" font-size="28" fill="#0f172a">Map Placeholder</text>
+  <text x="970" y="360" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto" font-size="28" fill="#0f172a">Moderation Placeholder</text>
+</svg>
+

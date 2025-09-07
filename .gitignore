@@ -1,0 +1,37 @@
+# Node/PNPM
+node_modules/
+.pnpm-store/
+pnpm-debug.log*
+npm-debug.log*
+yarn-error.log*
+
+# Build outputs
+.next/
+out/
+dist/
+coverage/
+
+# Env files
+.env
+.env.*
+apps/api/.env
+apps/web/.env.local
+
+# OS/editor
+.DS_Store
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Docker
+**/.docker/
+
+# Prisma
+prisma/migrations/
+
+# Playwright/Testing (future)
+test-results/
+playwright-report/
+blob-report/
+

@@ -1,0 +1,12 @@
+{
+  "name": "@incident/config",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "main": "index.js",
+  "files": ["tsconfig", "eslint", "tailwind"],
+  "devDependencies": {
+    "@types/node": "^20.11.30"
+  }
+}
+
